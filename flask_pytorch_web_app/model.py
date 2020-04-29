@@ -1,4 +1,5 @@
 import io
+from os import getcwd
 import json
 import torchvision.transforms as transforms
 from torchvision import models
@@ -17,6 +18,7 @@ def transform_image(image_bytes):
 
 
 def predict(image_file, class_file):
+    class_file = getcwd() + '/flask_pytorch_web_app/' + class_file
     # Make sure to pass `pretrained` as `True` to use the pretrained weights:
     model = models.densenet121(pretrained=True)
     # Since we are using our model only for inference, switch to `eval` mode:
