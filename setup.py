@@ -9,7 +9,7 @@ setup(
         'dominate==2.5.1',
         'Flask==1.1.2',
         'Flask-Bootstrap==3.3.7.1',
-        'Flask-Uploads==0.2.1',
+        'Flask-Uploads',
         'future==0.18.2',
         'itsdangerous==1.1.0',
         'Jinja2==2.11.2',

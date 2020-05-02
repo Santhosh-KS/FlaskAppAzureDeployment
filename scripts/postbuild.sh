@@ -13,3 +13,4 @@ ls
 which python
 python --version
 ls /home/site/wwwroot
+pip freeze
