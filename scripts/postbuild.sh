@@ -11,3 +11,5 @@ export
 pwd
 ls
 which python
+python --version
+ls /home/site/wwwroot
