@@ -10,6 +10,6 @@ def create_app():
     app.config.from_object('config.Config')
 
     with app.app_context():
-        from . import upload
+        from . import routes
         configure_uploads(app, photos)
         return app

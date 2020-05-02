@@ -1,10 +1,10 @@
 from flask import render_template, request, send_from_directory, flash, url_for
-from .model import predict
 from flask import current_app as app
+from .model import predict
 from . import photos
 
 
-class DataObj():
+class DataObject():
     pass
 
 
@@ -28,7 +28,7 @@ def send_file(filename):
 
 @app.route('/prediction/<filename>', methods=['GET', 'POST'])
 def prediction(filename):
-    obj = DataObj
+    obj = DataObject
     obj.is_image_display = False
     obj.is_predicted = False
     if request.method == 'POST' and filename:
@@ -49,23 +49,25 @@ def prediction(filename):
 
 @app.route('/', methods=['GET', 'POST'])
 def upload():
-    obj = DataObj
+    obj = DataObject
     obj.is_image_display = False
     obj.image = ""
     if request.method == 'POST' and 'image' in request.files:
-        ft = request.files['image']
-        if checkFileType(ft.filename):
-            filename = photos.save(request.files['image'])
+        image_file = request.files['image']
+        if checkFileType(image_file.filename):
+            filename = photos.save(image_file)
             obj.image = filename
             obj.is_image_display = True
             obj.is_predicted = False
             return render_template('/predict.html', obj=obj)
         else:
-            if ft.filename:
-                msg = f"{ft.filename} is not an image file"
+            if image_file.filename:
+                msg = f"{image_file.filename} is not an image file"
             else:
                 msg = "Please select an image file"
             flash(msg)
         return render_template('/upload.html', obj=obj)
     return render_template('/upload.html', obj=obj)
+
+
 
