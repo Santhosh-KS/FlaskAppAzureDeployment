@@ -8,3 +8,6 @@ mkdir -p /tmp/images
 echo "Done installation "
 echo "HERE are exports"
 export
+pwd
+ls
+which python
