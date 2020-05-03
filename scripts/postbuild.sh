@@ -15,6 +15,7 @@
 #ls /home/site/wwwroot
 #pip freeze
 #pip install --no-cache-dir -r  requirements.txt
+pip install wheel gunicorn
 pip install --no-cache-dir torch==1.5.0
 pip install --no-cache-dir torchvision==0.6.0
 echo "HERE are exports"
