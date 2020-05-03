@@ -16,7 +16,6 @@
 #pip freeze
 #pip install --no-cache-dir -r  requirements.txt
 pip install wheel gunicorn
-pip install --no-cache-dir torch==1.5.0
-pip install --no-cache-dir torchvision==0.6.0
+pip install --no-cache-dir torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 echo "HERE are exports"
 export
