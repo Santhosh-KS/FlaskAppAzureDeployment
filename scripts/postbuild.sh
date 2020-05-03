@@ -15,7 +15,12 @@
 #ls /home/site/wwwroot
 #pip freeze
 #pip install --no-cache-dir -r  requirements.txt
-pip install wheel gunicorn
-pip install --no-cache-dir torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+pip3 install wheel gunicorn
+pip3 install --no-cache-dir torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 echo "HERE are exports"
 export
+echo "HERE are the installs for pip3"
+pip3 freeze
+
+echo "HERE are the installs for pip"
+pip freeze
